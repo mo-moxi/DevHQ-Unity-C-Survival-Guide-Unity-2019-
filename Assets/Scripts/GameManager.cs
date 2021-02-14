@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
             _spawnCount ++;
             if(_spawnCount < (_spawnLimit +1))
             {
-                SpawnItem(Random.Range(0, _itemsToSpawn.Count));
+                SpawnItem();
             }
             else if (_spawnCount == (_spawnLimit +1))
             {
@@ -40,12 +40,13 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    private void SpawnItem(int item)
+    private void SpawnItem()
     {
+        var itemToSpawn= (Random.Range(0, _itemsToSpawn.Count));  // random select item
         var xSpawn = Random.Range(0, _spawnRange);   // random x
         var ySpawn = Random.Range(0, _spawnRange);   // random y
         var pos = new Vector3(xSpawn, ySpawn, 0f);     //  set position 
-        _spawnedItem.Add(Instantiate(_itemsToSpawn[item], pos, Quaternion.identity)); // spawn item and get item reference
+        _spawnedItem.Add(Instantiate(_itemsToSpawn[itemToSpawn], pos, Quaternion.identity)); // spawn item and get item reference
     }
 
     private void ChangeColor()
