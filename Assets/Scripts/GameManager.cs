@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     // clearing the list.
     [SerializeField]
     private List<GameObject> _itemsToSpawn = new List<GameObject>(); // create item list
+    [SerializeField]
     private List<GameObject> _spawnedItem = new List<GameObject>();  // create spawn reference list 
     private int _spawnCount;
     [SerializeField]
@@ -43,8 +44,8 @@ public class GameManager : MonoBehaviour
     private void SpawnItem()
     {
         var itemToSpawn= (Random.Range(0, _itemsToSpawn.Count));  // random select item
-        var xSpawn = Random.Range(0, _spawnRange);   // random x
-        var ySpawn = Random.Range(0, _spawnRange);   // random y
+        var xSpawn = Random.Range(-_spawnRange, _spawnRange);   // random x
+        var ySpawn = Random.Range(-_spawnRange, _spawnRange);   // random y
         var pos = new Vector3(xSpawn, ySpawn, 0f);     //  set position 
         _spawnedItem.Add(Instantiate(_itemsToSpawn[itemToSpawn], pos, Quaternion.identity)); // spawn item and get item reference
     }
@@ -61,7 +62,9 @@ public class GameManager : MonoBehaviour
     {
         foreach (var item in _spawnedItem)
         {
-            item.SetActive(false); // de-activate item
+            item.SetActive(false); // de-activate gameObject item
         }
+        _spawnedItem.Clear(); // clear the reference list
     }
+
 }
