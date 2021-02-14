@@ -222,6 +222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 951303880}
+  - component: {fileID: 951303879}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -229,6 +230,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &951303879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951303878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 635c4ee7964890a4fb823c3a396f86f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsToSpawn:
+  - {fileID: 539405736704544695, guid: 390267225175e1673ae6e37b825495e7, type: 3}
+  - {fileID: 4737652927117418198, guid: d68a00e5cfe86cd05bf465753ce02b74, type: 3}
+  - {fileID: 3261886635457360815, guid: 0fea78cacc2c4a3ab82d1a33b3c6040b, type: 3}
 --- !u!4 &951303880
 Transform:
   m_ObjectHideFlags: 0
