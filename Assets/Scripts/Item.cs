@@ -10,12 +10,12 @@ public class Item
         Weapon,
         Consumable
     }
-
-    public Sprite icon;
-    public int id;
-
-    public ItemType itemType;
     public string name;
+    public int id;
+    public Sprite icon;
+    public String description;
+    public ItemType itemType;
+
 
     public void Action()
     {
