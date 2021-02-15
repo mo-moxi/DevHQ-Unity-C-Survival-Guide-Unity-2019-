@@ -1,14 +1,36 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Timeline;
 
 public class Enemy : MonoBehaviour, IDamagable // use <float> <int> , etc for generic types
 {
+    private MeshRenderer _mesh;
     public int health { get; set; }
     public void Damage(int damageAmount)
     {
-        GetComponent<MeshRenderer>().material.color = Color.red;
+        _mesh.material.color = Color.cyan;
+    }
+    void Start()
+    {
+        _mesh = GetComponent<MeshRenderer>();
+        Main.onClick += ChangeColor;                        // onClick is a trigger for methods with similar parameters
+        Main.onClick += Move;
+    }
+
+    public void ChangeColor() // method signature must match method in main
+    {
+        _mesh.material.color = Color.blue;
+    }
+    public void Move()
+    {
+        transform.position = new Vector3(-2f, 1f, -1f);
+    }
+
+    private void OnDisable()
+    {
+        Main.onClick -= ChangeColor;
+        Main.onClick -= Move;
     }
 }
 // the below is used in abstract classes

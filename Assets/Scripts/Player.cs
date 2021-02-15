@@ -11,21 +11,25 @@ public class Player : MonoBehaviour, IDamagable // use <float> <int> , etc for g
     {
         _mesh.material.color = Color.red;
     }
-
     void Start()
     {
         _mesh = GetComponent<MeshRenderer>();
-        Main.onClick += ChangeColor;                            // onClick is a trigger for methods with similar parameters
+        Main.onClick += ChangeColor;                        // onClick is a trigger for methods with similar parameters
+        Main.onClick += Move;
     }
 
-    public void ChangeColor()   // method signature must match method in main
+    public void ChangeColor() // method signature must match method in main
     {
         _mesh.material.color = Color.green;
+    }
+    public void Move()
+    {
         transform.position = new Vector3(2f, 2f, 2f);
     }
 
     private void OnDisable()
     {
         Main.onClick -= ChangeColor;
+        Main.onClick -= Move;
     }
 }
