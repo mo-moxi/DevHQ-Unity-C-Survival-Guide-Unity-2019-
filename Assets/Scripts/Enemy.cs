@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour, IDamagable
     public int health { get; set; }
     public void Damage(int damageAmount)
     {
-        throw new System.NotImplementedException();
+        GetComponent<MeshRenderer>().material.color = Color.red;
     }
 }
 // the below is used in abstract classes

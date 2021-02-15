@@ -7,6 +7,6 @@ public class Player : MonoBehaviour, IDamagable
     public int health { get; set; }
     public void Damage(int damageAmount)
     {
-        throw new System.NotImplementedException();
+        GetComponent<MeshRenderer>().material.color = Color.red;
     }
 }

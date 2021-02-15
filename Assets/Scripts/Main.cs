@@ -7,18 +7,16 @@ public class Attendee
 {
     public string name;
     public int id;
-
     public Attendee(int id)
     {
         this.id = id;
     }
-    
 }
 
 public class Main : MonoBehaviour
 {
     private Dictionary<int, Attendee> AttendeeDictionary = new Dictionary<int, Attendee>();
-
+    public Camera cam;
     private Attendee p3;
     void Start()
     {
@@ -45,5 +43,18 @@ public class Main : MonoBehaviour
             var Attendee3 = AttendeeDictionary[p3.id];
             Debug.Log("Attendee " + Attendee3.name);
         }
-    }
+
+        if (Input.GetMouseButtonDown(0))
+
+        {
+            Ray rayOrigin = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitInfo;
+            if (Physics.Raycast(rayOrigin, out hitInfo))
+            {
+                IDamagable obj = hitInfo.collider.GetComponent<IDamagable>();
+                if(obj !=null)
+                    obj.Damage(5);
+            }
+        }
+ }
 }
