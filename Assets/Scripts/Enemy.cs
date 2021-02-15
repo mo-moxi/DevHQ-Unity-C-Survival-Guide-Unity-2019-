@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Timeline;
 
-public class Enemy : MonoBehaviour, IDamagable
-
+public class Enemy : MonoBehaviour, IDamagable // use <float> <int> , etc for generic types
 {
     public int health { get; set; }
     public void Damage(int damageAmount)

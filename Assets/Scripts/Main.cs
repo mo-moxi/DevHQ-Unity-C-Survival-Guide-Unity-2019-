@@ -56,5 +56,5 @@ public class Main : MonoBehaviour
                     obj.Damage(5);
             }
         }
- }
+    }
 }
