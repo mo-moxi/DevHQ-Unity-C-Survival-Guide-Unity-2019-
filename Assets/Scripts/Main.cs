@@ -18,6 +18,17 @@ public class Main : MonoBehaviour
     private Dictionary<int, Attendee> AttendeeDictionary = new Dictionary<int, Attendee>();
     public Camera cam;
     private Attendee p3;
+    
+    // Delegates//
+
+    public delegate void ChangeColor(Color nweColor);
+   
+    public ChangeColor onChangeColor;
+    public delegate void OnComplete();
+
+    public OnComplete onComplete;
+    
+    // end of delegates
     void Start()
     {
         Attendee p1 = new Attendee(1);
@@ -30,6 +41,16 @@ public class Main : MonoBehaviour
         AttendeeDictionary.Add(p1.id, p1);
         AttendeeDictionary.Add(p2.id, p2);
         AttendeeDictionary.Add(p3.id, p3);
+        
+        // delegates
+        onChangeColor = UpDateColor;
+        onChangeColor(Color.green);
+        onComplete += Task;     // += register =+ de-register
+        onComplete += Task2;
+        onComplete += Task3;
+        if(onComplete !=null)
+            onComplete();
+
     }
 
     // Update is called once per frame
@@ -56,5 +77,27 @@ public class Main : MonoBehaviour
                     obj.Damage(5);
             }
         }
+    }
+
+    // delegates
+    public void UpDateColor(Color newColor)
+    {
+        Debug.Log("Changing colour to " + newColor.ToString());
+    }
+    public void Task()
+    {
+        Debug.Log("Task Finished");
+    }
+    public void Task2()
+    {
+        Debug.Log("Task 2 Finished");
+    }
+    public void Task3()
+    {
+        Debug.Log("Task 3 Finished");
+    }
+    public void SalmonFishingInYemen(Color salmon)
+    {
+        
     }
 }
