@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
@@ -18,19 +19,52 @@ public class Main : MonoBehaviour
     private Dictionary<int, Attendee> AttendeeDictionary = new Dictionary<int, Attendee>();
     public Camera cam;
     private Attendee p3;
+    public string letters;
     
     // Delegates//
     public delegate void ChangeColor(Color newColor);
     public ChangeColor onChangeColor;
-    public delegate void OnComplete();
+    public delegate void OnComplete(); // func...
     public OnComplete onComplete;
+
+    public delegate string OnCompleted(); // func...
+    public OnComplete onCompleted;
 
     public delegate void ActionClick();
     public static event ActionClick onClick;
+
+    public Func<string, int> WordLength;
+
+    int LetterCount(string letters)
+    {
+        return letters.Length;
+    }
+
+    public delegate int CharacterLength(string text); // linked to below
+
+    int GetCharacters(string name)
+    {
+        return name.Length;
+    }
     
     // end of delegates
+
+    private string SomethingToDo()
+    {
+        // this is linked to the delegate string above
+        return null; // don't know what this should be 
+    }
     void Start()
     {
+        WordLength = LetterCount;
+        int count = WordLength("Manifesto");
+        Debug.Log("Func Word Length: " + count);
+        
+        CharacterLength cl = new CharacterLength(GetCharacters); // return types
+        //code
+        //code
+        Debug.Log(cl("Delegate string return type word length for Hobo"));
+        
         Attendee p1 = new Attendee(1);
         p1.name = "Mike";
         Attendee p2 = new Attendee(200);
@@ -50,6 +84,12 @@ public class Main : MonoBehaviour
         onComplete += Task3;
         if(onComplete !=null)
             onComplete();
+        // delegates
+        string name = "Hobo";
+        int characterCount = GetCharacters(name);
+        Debug.Log("Character Length: " + characterCount);
+
+
     }
 
     // Update is called once per frame
