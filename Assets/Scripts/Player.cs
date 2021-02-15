@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour, IDamagable // use <float> <int> , etc for generic types
 {
+    // delegates
+    // public delegate void OnDamagedReceived(int currentHealth);
+    // public static event OnDamagedReceived onDamage;
+
+    public static Action<int> onDamageReceived; // this is the same code as above
+    
     private MeshRenderer _mesh;
     public int health { get; set; }
     public void Damage(int damageAmount)
