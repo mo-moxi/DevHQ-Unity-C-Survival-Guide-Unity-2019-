@@ -17,6 +17,8 @@ public class Books
         Adventure,
         Romance
     }
+
+    public Genre genre;
 }
 
 public class Main_Primitive_Type : MonoBehaviour
