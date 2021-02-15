@@ -40,7 +40,7 @@ public class Main : MonoBehaviour
         return letters.Length;
     }
 
-    public delegate int CharacterLength(string text); // linked to below
+    public delegate int CharacterLength(string text); // linked to below ****
 
     int GetCharacters(string name)
     {
@@ -60,10 +60,10 @@ public class Main : MonoBehaviour
         int count = WordLength("Manifesto");
         Debug.Log("Func Word Length: " + count);
         
-        CharacterLength cl = new CharacterLength(GetCharacters); // return types
+        CharacterLength cl = new CharacterLength(GetCharacters); // return types ****
         //code
         //code
-        Debug.Log(cl("Delegate string return type word length for Hobo"));
+        Debug.Log(cl("Delegate return type word length for Hobo"));
         
         Attendee p1 = new Attendee(1);
         p1.name = "Mike";
@@ -85,7 +85,7 @@ public class Main : MonoBehaviour
         if(onComplete !=null)
             onComplete();
         // delegates
-        string name = "Hobo";
+        string name = "Delegate string return type word length for Hobo";
         int characterCount = GetCharacters(name);
         Debug.Log("Character Length: " + characterCount);
 
