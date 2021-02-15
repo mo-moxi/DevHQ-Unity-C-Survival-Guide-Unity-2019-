@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
 
-public class Player
+public class Attendee
 {
     public string name;
     public int id;
 
-    public Player(int id)
+    public Attendee(int id)
     {
         this.id = id;
     }
@@ -17,21 +17,21 @@ public class Player
 
 public class Main : MonoBehaviour
 {
-    private Dictionary<int, Player> playerDictionary = new Dictionary<int, Player>();
+    private Dictionary<int, Attendee> AttendeeDictionary = new Dictionary<int, Attendee>();
 
-    private Player p3;
+    private Attendee p3;
     void Start()
     {
-        Player p1 = new Player(1);
+        Attendee p1 = new Attendee(1);
         p1.name = "Mike";
-        Player p2 = new Player(200);
+        Attendee p2 = new Attendee(200);
         p2.name = "Mu";
-        p3 = new Player(13);
+        p3 = new Attendee(13);
         p3.name = "Minty";
         
-        playerDictionary.Add(p1.id, p1);
-        playerDictionary.Add(p2.id, p2);
-        playerDictionary.Add(p3.id, p3);
+        AttendeeDictionary.Add(p1.id, p1);
+        AttendeeDictionary.Add(p2.id, p2);
+        AttendeeDictionary.Add(p3.id, p3);
     }
 
     // Update is called once per frame
@@ -39,11 +39,11 @@ public class Main : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            var player = playerDictionary[200];
-            Debug.Log("Player " + player.name);
+            var Attendee = AttendeeDictionary[200];
+            Debug.Log("Attendee " + Attendee.name);
             
-            var player3 = playerDictionary[p3.id];
-            Debug.Log("Player " + player3.name);
+            var Attendee3 = AttendeeDictionary[p3.id];
+            Debug.Log("Attendee " + Attendee3.name);
         }
     }
 }

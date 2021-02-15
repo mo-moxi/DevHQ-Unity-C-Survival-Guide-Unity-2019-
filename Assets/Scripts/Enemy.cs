@@ -3,7 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Timeline;
 
-public abstract class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamagable
+
+{
+    public int health { get; set; }
+    public void Damage(int damageAmount)
+    {
+        throw new System.NotImplementedException();
+    }
+}
+// the below is used in abstract classes
+/*public abstract class Enemy : MonoBehaviour
 {
     public int speed;
     public int health;
@@ -19,5 +29,5 @@ public abstract class Enemy : MonoBehaviour
         
     }
     public abstract void Attack();
-}
+*/    
 
