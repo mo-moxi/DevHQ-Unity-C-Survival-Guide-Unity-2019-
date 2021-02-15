@@ -20,13 +20,13 @@ public class Main : MonoBehaviour
     private Attendee p3;
     
     // Delegates//
-
-    public delegate void ChangeColor(Color nweColor);
-   
+    public delegate void ChangeColor(Color newColor);
     public ChangeColor onChangeColor;
     public delegate void OnComplete();
-
     public OnComplete onComplete;
+
+    public delegate void ActionClick();
+    public static event ActionClick onClick;
     
     // end of delegates
     void Start()
@@ -50,7 +50,6 @@ public class Main : MonoBehaviour
         onComplete += Task3;
         if(onComplete !=null)
             onComplete();
-
     }
 
     // Update is called once per frame
@@ -99,5 +98,11 @@ public class Main : MonoBehaviour
     public void SalmonFishingInYemen(Color salmon)
     {
         
+    }
+    //UI button  click
+    public void onButtonClick()
+    {
+        if (onClick !=null)
+            onClick();
     }
 }
