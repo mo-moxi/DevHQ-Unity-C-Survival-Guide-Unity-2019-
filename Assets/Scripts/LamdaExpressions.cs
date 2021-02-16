@@ -47,6 +47,10 @@ public class LamdaExpressions : MonoBehaviour
         onCalculateSum = (a, b) => a + b;
         Debug.Log(onCalculateSum(1, 3));
         var totalSum = onCalculateSum(4, 9);
+        // Func is a return type delegate; therefore,
+        //  onCalculateSum = (a, b) =>
+        // { return a + b;
+        // };
      }
 
      void CalculateSum(int a, int b)
