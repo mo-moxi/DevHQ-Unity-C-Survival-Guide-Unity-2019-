@@ -9,7 +9,8 @@ public class LINQ_Quiz : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var passingGrade = grades.Where(pg => pg > 69).OrderByDescending(g => g);
+        // this line filters by size, puts in orderby/descending order and then reverses the order
+        var passingGrade = grades.Where(pg => pg > 69).OrderBy(g => g);//.Reverse();
         foreach (var item in passingGrade)
         {
             Debug.Log("Grade result: " + item);
