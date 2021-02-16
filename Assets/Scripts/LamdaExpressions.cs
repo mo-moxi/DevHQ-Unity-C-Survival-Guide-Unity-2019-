@@ -12,6 +12,7 @@ public class LamdaExpressions : MonoBehaviour
     public Func<string, int> CharacterLength; // return type delegate
     public Action<int, int> Sum;              // void type delegate
     public Action onGetName;                  // void no parameters delegate
+    public Func<int> onGetName1;              // Func return int
     
      void Start()
      {
@@ -35,6 +36,11 @@ public class LamdaExpressions : MonoBehaviour
         // Void type delegate
         onGetName = () => Debug.Log("Name: " + gameObject.name);
         onGetName();
+        
+        // Func int with void
+        onGetName1 = () => this.gameObject.name.Length;
+        int charactrerCount = onGetName1();
+        Debug.Log("Character Count: " + charactrerCount);
      }
 
      void CalculateSum(int a, int b)
