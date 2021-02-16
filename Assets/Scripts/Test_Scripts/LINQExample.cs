@@ -19,12 +19,12 @@ public class LINQExample : MonoBehaviour
     var uniqueNames = names.Distinct();
     foreach (var item in uniqueNames)
     {
-        Debug.Log("Name: " + item);
+        Debug.Log("Unique Name: " + item);
     }
     var result = names.Where(n => n.Length > 4);
     foreach (var item in result)
     {
-        Debug.Log("Name: " + item);
+        Debug.Log("Name result: " + item);
     }
     }
 
