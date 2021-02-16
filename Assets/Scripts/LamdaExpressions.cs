@@ -9,8 +9,9 @@ public class LamdaExpressions : MonoBehaviour
     // public delegate int CharacterLength(string test);
 
     // void delegate use Action and return delegates use Func
-    public Func<string, int> CharacterLength;
-    public Action<int, int> Sum;
+    public Func<string, int> CharacterLength; // return type delegate
+    public Action<int, int> Sum;              // void type delegate
+    public Action onGetName;                  // void no parameters delegate
     
      void Start()
      {
@@ -30,6 +31,10 @@ public class LamdaExpressions : MonoBehaviour
          
          // traditional dedicated method
         CalculateSum(9, 2);
+        
+        // Void type delegate
+        onGetName = () => Debug.Log("Name: " + gameObject.name);
+        onGetName();
      }
 
      void CalculateSum(int a, int b)
