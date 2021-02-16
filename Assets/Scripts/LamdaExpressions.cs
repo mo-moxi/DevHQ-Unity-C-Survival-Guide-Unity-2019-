@@ -10,12 +10,28 @@ public class LamdaExpressions : MonoBehaviour
 
     // void delegate use Action and return delegates use Func
     public Func<string, int> CharacterLength;
+    public Action<int, int> Sum;
     
      void Start()
      {
+         //show character length using a Func and lamda expression
          CharacterLength = (name) => name.Length;
          int count = CharacterLength("Manifesto");
          Debug.Log("Count: " + count);
+         
+         // calculate the sum of two number using Action and lamda
+         Sum = (a, b) =>
+         {
+             var total = a + b;
+              Debug.Log("Total:" + total);
+         };
+         Sum(8, 3);
+         Sum(5, 5);
+     }
+
+     void CalculateSum(int a, int b)
+     {
+         var total = a + b;
      }
 
 /*     int getCharacters(string name)       // replaced by lamda above
