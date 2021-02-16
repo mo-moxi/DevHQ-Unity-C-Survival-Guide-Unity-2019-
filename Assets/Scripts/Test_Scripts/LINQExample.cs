@@ -21,7 +21,11 @@ public class LINQExample : MonoBehaviour
     {
         Debug.Log("Name: " + item);
     }
-    
+    var result = names.Where(n => n.Length > 4);
+    foreach (var item in result)
+    {
+        Debug.Log("Name: " + item);
+    }
     }
 
     // Update is called once per frame
