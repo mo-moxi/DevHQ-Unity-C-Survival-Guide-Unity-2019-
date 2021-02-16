@@ -6,6 +6,10 @@ public class Events_1 : MonoBehaviour
 {
     public delegate void ActionClick();
 
+    public delegate void Teleport(Vector3 pos);
+
+    public static event Teleport onTeleport;
+
     public static event ActionClick onClick;
     
     public void ButtonClick()
@@ -23,6 +27,13 @@ public class Events_1 : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            //onTeleport(new Vector3(5, 2, 0));
+            //or
+            Vector3 pos = new Vector3(5,2,0);
+            onTeleport(pos);
+            // GDHQ prefer second 'pos' option 
+        }
     }
 }
