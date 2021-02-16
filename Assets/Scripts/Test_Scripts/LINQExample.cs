@@ -14,7 +14,8 @@ public class LINQExample : MonoBehaviour
                 Debug.Log("Name exists: " + name);
         }
     */
-    var namesFound = names.Any(name => name == "simon");
+    // var namesFound = names.Any(name => name == "simon");
+    var namesFound = names.Contains("gillian");
     Debug.Log("Does name exist:" + namesFound);
     }
 
