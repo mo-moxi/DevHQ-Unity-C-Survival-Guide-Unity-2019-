@@ -809,22 +809,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119e16b3f5220050395700d37c229659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsList:
-  - name: Bread
+  items:
+  - name: a
     itemID: 1
     buff: 3
-  - name: Cheese
+  - name: b
     itemID: 2
-    buff: 5
-  - name: Grape
+    buff: 3
+  - name: c
     itemID: 3
-    buff: 2
-  - name: Ham
-    itemID: 4
-    buff: 7
-  - name: Egg
-    itemID: 5
-    buff: 6
+    buff: 4
 --- !u!136 &1289010229
 CapsuleCollider:
   m_ObjectHideFlags: 0
