@@ -10,35 +10,14 @@ public class LamdaExpressions : MonoBehaviour
 
     // void delegate use Action and return delegates use Func
     public Func<string, int> CharacterLength;
-    public Action<int, int> Sum1;
-    public Action<int, int> Sum2;
-
+    
      void Start()
      {
          CharacterLength = (name) => name.Length;
          int count = CharacterLength("Manifesto");
          Debug.Log("Count: " + count);
-         
-         Sum2(5, 3);
-         Sum2 = (a, b) =>
-         {
-             var total = a + b;
-             if (total < 100)
-             {
-                 Debug.Log("Failed: looser!");
-             }
-             Debug.Log("Total: " + total);
-         };
-         
-         // for sum below
-         Sum1(5, 5);
-         Sum1 = CalculateSum;
      }
-     void CalculateSum(int a, int b)
-     {
-         var total = a + b;
-         Debug.Log("Action return sum " + total);
-     }
+
 /*     int getCharacters(string name)       // replaced by lamda above
      {
          return name.Length;
