@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,19 +13,16 @@ public class CallBack : MonoBehaviour
             Debug.Log("Shit happens!");
         }));
     }
-
     // Update is called once per frame
     void Update()
     {
         
     }
-
     IEnumerator MyRoutine(Action onComplete = null)
     {
         yield return new WaitForSeconds(5.0f);
 
         if (onComplete != null)
             onComplete();
-    }
     }
 }
