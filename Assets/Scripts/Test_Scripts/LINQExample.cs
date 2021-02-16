@@ -13,9 +13,11 @@ public class LINQExample : MonoBehaviour
         {       if(item == "simon")
                 Debug.Log("Name exists: " + name);}
     */
-    // var namesFound = names.Any(name => name == "simon");
+    var nameExist = names.Any(name => name == "simon");
+    
     var namesFound = names.Contains("gillian");
     Debug.Log("Does name exist:" + namesFound);
+    
     var uniqueNames = names.Distinct();
     foreach (var item in uniqueNames)
     {

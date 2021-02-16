@@ -789,7 +789,7 @@ GameObject:
   - component: {fileID: 1289010231}
   - component: {fileID: 1289010230}
   - component: {fileID: 1289010229}
-  - component: {fileID: 1289010233}
+  - component: {fileID: 1289010228}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -797,6 +797,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1289010228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289010227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 119e16b3f5220050395700d37c229659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsList:
+  - name: Bread
+    itemID: 1
+    buff: 3
+  - name: Cheese
+    itemID: 2
+    buff: 5
+  - name: Grape
+    itemID: 3
+    buff: 2
+  - name: Ham
+    itemID: 4
+    buff: 7
+  - name: Egg
+    itemID: 5
+    buff: 6
 --- !u!136 &1289010229
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -872,18 +900,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1289010233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289010227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb0e5a6dbd45f1fd6bf2a9ada57ffba2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1340638851
 GameObject:
   m_ObjectHideFlags: 0
