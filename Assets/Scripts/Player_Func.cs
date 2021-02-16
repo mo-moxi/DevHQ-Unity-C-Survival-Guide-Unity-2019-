@@ -27,7 +27,7 @@ public class Player_Func : MonoBehaviour
         // Func or return type delegate 
         CharacterLength += GetCharacters;
         int count = CharacterLength("Museli");
-        Debug.Log("Count:" + count);
+        Debug.Log("Count: " + count);
     }
 
     // Update is called once per frame
