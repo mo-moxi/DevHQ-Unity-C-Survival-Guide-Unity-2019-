@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -22,5 +23,11 @@ public class Event_Cube : MonoBehaviour
     public void ChangeColor()
     {
         _mesh.material.color = Color.red;
+    }
+    
+    // unsubscribe
+    private void OnDisable()
+    {
+        Events_1.onClick -= ChangeColor;
     }
 }
