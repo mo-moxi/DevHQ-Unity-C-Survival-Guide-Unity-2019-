@@ -27,11 +27,15 @@ public class LamdaExpressions : MonoBehaviour
          };
          Sum(8, 3);
          Sum(5, 5);
+         
+         // traditional dedicated method
+        CalculateSum(9, 2);
      }
 
      void CalculateSum(int a, int b)
      {
          var total = a + b;
+         Debug.Log("Traditional total:" + total);
      }
 
 /*     int getCharacters(string name)       // replaced by lamda above
