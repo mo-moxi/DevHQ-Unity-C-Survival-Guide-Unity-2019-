@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager_Actions : MonoBehaviour
+public class UIManager_Actions : MonoSingleton<UIManager_Actions>
 {
     public Text healthText;
     public void OnEnable()
@@ -30,8 +30,9 @@ public class UIManager_Actions : MonoBehaviour
     {
         
     }
-    public void Show(string name)
+    public override void Init()
     {
-        Debug.Log(name);
+        base.Init();
+        Debug.Log("Obj1 started");
     }
 }

@@ -1,16 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Events_1 : MonoBehaviour
 {
     public delegate void ActionClick();
-
-    public delegate void Teleport(Vector3 pos);
-
-    public static event Teleport onTeleport;
-
     public static event ActionClick onClick;
+
+//    private delegate void Teleport(Vector3 pos);
+//    public static event Teleport onTeleport;
+
+    public static Action<Vector3> onTeleport;
     
     public void ButtonClick()
     {
@@ -35,5 +36,6 @@ public class Events_1 : MonoBehaviour
             onTeleport(pos);
             // GDHQ prefer second 'pos' option 
         }
+        
     }
 }

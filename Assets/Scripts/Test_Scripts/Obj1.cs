@@ -13,6 +13,6 @@ public class Obj1 : MonoSingleton<Obj1>
     public override void Init()
     {
         base.Init();
-        Debug.Log("Obj started");
+        Debug.Log("Obj1 started");
     }
 }

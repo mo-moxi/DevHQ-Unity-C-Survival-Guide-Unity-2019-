@@ -9,18 +9,18 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     // Start is called before the first frame update
     void Start()
     {
-        var Lopp= Player_Actions.Instance.lopp;
-        Debug.Log(Lopp);
-        UIManager.Instance.UpdateHealth(10);
+        Debug.Log(Player_Actions.Instance.lopp);
+        Init();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public override void Init()
     {
         Debug.Log("SpawnManger Started");
     }
+
 }
