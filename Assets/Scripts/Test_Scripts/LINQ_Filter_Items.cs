@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -30,8 +31,11 @@ public class LINQ_Filter_Items : MonoBehaviour
 
       var buffAvg = items.Average(item => item.buff);
       Debug.Log("Buff avg:" + buffAvg);
-      
 
+      var ret = isTooLong(4, "people");
+      Debug.Log("Ret" + ret);
+      
+      greet("World");
 
     }
 
@@ -40,4 +44,15 @@ public class LINQ_Filter_Items : MonoBehaviour
     {
         
     }
-}
+    Func<int, string, bool> isTooLong = (int x, string s) => s.Length > x;
+    
+    Action<string> greet = name =>
+    {
+        string greeting = $"Hello {name}!";
+        Debug.Log(greeting);
+    };
+    
+     
+    
+    
+ }
