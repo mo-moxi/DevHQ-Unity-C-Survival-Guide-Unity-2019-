@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
 {
     private static T _instance;
+
     public static T Instance
     {
         get
@@ -13,18 +15,16 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
                 Debug.Log(typeof(T).ToString() + " is null.");
             return _instance;
         }
-
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        _instance = (T) this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void Init()
     {
-        
+        Debug.Log("This is a message from your sponsor :-)");
     }
+
 }

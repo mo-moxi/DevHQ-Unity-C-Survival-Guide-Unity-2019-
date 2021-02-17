@@ -2,32 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class SpawnManager : MonoSingleton<SpawnManager>
 {
-    private static SpawnManager _instance;
-    public static SpawnManager Instance
-    {
-        get
-        {
-            if (_instance == null)
-                Debug.LogError("The SpawnManager is NUll."); 
-            return _instance;
-        }
-    }
+    public int hello = 12;
 
-    private void OnAwake()
-    {
-        _instance = this;
-    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        var Lopp= Player_Actions.Instance.lopp;
+        Debug.Log(Lopp);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public override void Init()
+    {
+        Debug.Log("SpawnManger Started");
     }
 }
