@@ -18,6 +18,7 @@ public class Player_Actions : MonoSingleton<Player_Actions>
         Health = 100;
         var hello = SpawnManager.Instance.hello;
         Debug.Log(hello);
+        
     } 
     // Update is called once per frame
     void Update()

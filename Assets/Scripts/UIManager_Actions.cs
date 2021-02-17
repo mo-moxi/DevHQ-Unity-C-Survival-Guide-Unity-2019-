@@ -30,4 +30,8 @@ public class UIManager_Actions : MonoBehaviour
     {
         
     }
+    public void Show(string name)
+    {
+        Debug.Log(name);
+    }
 }

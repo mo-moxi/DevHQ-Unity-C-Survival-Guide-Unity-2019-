@@ -16,7 +16,6 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
             return _instance;
         }
     }
-
     private void Awake()
     {
         _instance = (T) this;
@@ -26,5 +25,5 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
     {
         Debug.Log("This is a message from your sponsor :-)");
     }
-
+    
 }

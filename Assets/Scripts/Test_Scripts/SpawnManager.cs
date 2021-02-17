@@ -11,6 +11,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     {
         var Lopp= Player_Actions.Instance.lopp;
         Debug.Log(Lopp);
+        UIManager.Instance.UpdateHealth(10);
     }
 
     // Update is called once per frame
