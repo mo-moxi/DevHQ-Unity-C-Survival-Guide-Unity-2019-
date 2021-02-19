@@ -8,6 +8,7 @@ public class Obj1 : MonoSingleton<Obj1>
     {
         Debug.Log(Obj.Instance.objPrize);
         Init();
+        Obj.Instance.Init();
     }
 
     public override void Init()

@@ -8,7 +8,7 @@ public class Obj : MonoSingleton<Obj>
 
     void Start()
     {
-        Init();
+       Init();
     }
 
     public override void Init()
